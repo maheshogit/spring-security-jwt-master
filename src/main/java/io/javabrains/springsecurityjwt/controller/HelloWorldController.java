@@ -41,7 +41,8 @@ class HelloWorldController {
 			);
 		}
 		catch (BadCredentialsException e) {
-			throw new Exception("Incorrect username or password", e);
+			//throw new Exception("Incorrect username or password", e);
+			return ResponseEntity.badRequest().body(new Exception("Incorrect username or password", e));
 		}
 
 
